@@ -1,0 +1,12 @@
+.navbar li {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* #color-text{
+    color: white;
+  } */
+
+#color-text:hover {
+  transform: scale(1.2);
+  color: #db291d;
+}

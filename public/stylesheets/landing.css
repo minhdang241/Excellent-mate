@@ -1,0 +1,29 @@
+.myrow {
+  margin-top: 3rem;
+}
+
+.form {
+  margin-bottom: 2rem;
+}
+
+.page-info {
+  margin-top: 4rem;
+  padding-right: 5rem;
+}
+
+.btn-block {
+  padding: 1rem;
+}
+
+.navbar li {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* #color-text{
+    color: white;
+  } */
+
+#color-text:hover {
+  transform: scale(1.2);
+  color: #db291d;
+}

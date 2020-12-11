@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Course</title>
+    <link rel="stylesheet" href="/stylesheets/course-list.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000054">
+        <a class="navbar-brand"  href="/profile/<%=currentUser._id%>">EM</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="/courses" id="color-text">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/projects" id="color-text">Projects</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <%if(currentUser.isAdmin) {%>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#createCourseModal"
+                        id="color-text">Add</a>
+                </li>
+
+                <div>
+                    <div class="modal fade" id="createCourseModal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">
+                                        Course Upload
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form id="uploadCourseForm" action="/courses" method="POST"
+                                        encType="multipart/form-data">
+                                        <div class="form-group">
+                                            <label for="name">Name</label>
+                                            <input class="form-control" type="text" name="name" id="name">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="courseID">Course ID</label>
+                                            <input class="form-control" type="text" name="courseId" id="courseId" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="name">Description</label>
+                                            <textarea class="form-control" name="courseDescription" id="description"
+                                                rows="7"></textarea>
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <p>Picture</p>
+                                            <input type="file" name="courseImage" />
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary" id="submitCourseButton">
+                                        Create
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout" id="color-text">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a
+                    class="nav-link"
+                    href="/profile/<%=currentUser._id%>"
+                        id="color-text"
+                        >Profile</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Blank space -->
+    <div style="padding: 30px"></div>
+
+    <!-- Search bar -->
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form>
+                <div class="input-group mb-3" style="margin: auto;">
+                    <input id="search-text" type="text" class="form-control" />
+                    <div class="input-group-prepend">
+                        <div class="dropdown">
+                            <button class="dropbtn" id="button_content">Course name</button>
+                            <div class="dropdown-content">
+                                <a href="#"
+                                    onclick='document.getElementById("button_content").innerHTML = "Course name"'>Course
+                                    name</a>
+                                <a href="#"
+                                    onclick='document.getElementById("button_content").innerHTML = "Course code"'>Course
+                                    code</a>
+                            </div>
+                        </div>
+                        <button id="search-button" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+    <!-- Blank space -->
+    <div style="padding: 50px"></div>
+
+    <div>
+        <div class="row">
+            <div class="col-md-1"></div>
+
+            <div class="col-md-10">
+                <div class="row">
+                    <%for (let index = 0; index < courses.length; index++) { %>
+                    <%const course = courses[index];%>
+                    <div class="col-md-3">
+                        <div class="card" id="course-card">
+                            <img class="card-img-top" src="<%=course.image%>" alt="Card image" />
+                            <div class="card-body">
+                                <a href="/courses/<%=course._id%>">
+                                    <h4 class="card-title"><%=course.name%></h4>
+                                </a>
+                                <p class="card-text"><%=course.courseId%></p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <%}%>
+
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+        <div style="padding: 70px"></div>
+
+        <script src="/javascripts/course-list.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

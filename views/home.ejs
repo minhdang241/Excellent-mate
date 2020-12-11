@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- <link rel="stylesheet" href="/stylesheets/profile.css"> -->
+
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script> -->
+    <script src="/javascripts/jquery.js"></script>
+
+
+    <title>Profile Page</title>
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000053">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">EM</a>
+            <button data-toggle="collapse" data-target="#navcol-1" class="navbar-toggler">
+                    <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li role="presentation" class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li role="presentation" class="nav-item">
+                        <a class="nav-link " href="/courses">Courses</a>
+                    </li>
+                    <li role="presentation" class="nav-item">
+                        <a class="nav-link" href="/projects">Projects</a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav ml-auto">
+                    <li role="presentation" class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                    <li role="presentation" class="nav-item">
+                        <a class="nav-link" href="/profile/<%=user._id%>">Profile</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- Courses -->
+        <h4 class="mt-4 mb-4">Courses</h4>
+
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <div class="card">
+                    <img class="card-img-top"
+                        src="https://instructure-uploads-apse2.s3.ap-southeast-2.amazonaws.com/account_95950000000000001/attachments/980142/building-IT.jpg?response-content-disposition=attachment%3B%20filename%3D%22building-IT.jpg%22%3B%20filename%2A%3DUTF-8%27%27building%252DIT.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIZ3OCIWEYQRKC54Q%2F20191030%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20191030T224628Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=5472987a534792987762c828448142b6519ddb7d28599494b4710a2e1061d564"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Building IT System</h4>
+                        <h6 class="text-muted card-subtitle mb-2">COSC2634</h6>
+                        <a class="card-link" href="#">People</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-3">
+                <div class="card">
+                    <img class="card-img-top"
+                        src="https://instructure-uploads-apse2.s3.ap-southeast-2.amazonaws.com/account_95950000000000001/attachments/980142/building-IT.jpg?response-content-disposition=attachment%3B%20filename%3D%22building-IT.jpg%22%3B%20filename%2A%3DUTF-8%27%27building%252DIT.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIZ3OCIWEYQRKC54Q%2F20191030%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20191030T224628Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=5472987a534792987762c828448142b6519ddb7d28599494b4710a2e1061d564"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Building IT System</h4>
+                        <h6 class="text-muted card-subtitle mb-2">COSC2634</h6>
+                        <a class="card-link" href="#">People</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-3">
+                <div class="card">
+                    <img class="card-img-top"
+                        src="https://instructure-uploads-apse2.s3.ap-southeast-2.amazonaws.com/account_95950000000000001/attachments/980142/building-IT.jpg?response-content-disposition=attachment%3B%20filename%3D%22building-IT.jpg%22%3B%20filename%2A%3DUTF-8%27%27building%252DIT.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIZ3OCIWEYQRKC54Q%2F20191030%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20191030T224628Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=5472987a534792987762c828448142b6519ddb7d28599494b4710a2e1061d564"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Building IT System</h4>
+                        <h6 class="text-muted card-subtitle mb-2">COSC2634</h6>
+                        <a class="card-link" href="#">People</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-3">
+                <div class="card">
+                    <img class="card-img-top"
+                        src="https://instructure-uploads-apse2.s3.ap-southeast-2.amazonaws.com/account_95950000000000001/attachments/980142/building-IT.jpg?response-content-disposition=attachment%3B%20filename%3D%22building-IT.jpg%22%3B%20filename%2A%3DUTF-8%27%27building%252DIT.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIZ3OCIWEYQRKC54Q%2F20191030%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20191030T224628Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=5472987a534792987762c828448142b6519ddb7d28599494b4710a2e1061d564"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Building IT System</h4>
+                        <h6 class="text-muted card-subtitle mb-2">COSC2634</h6>
+                        <a class="card-link" href="#">People</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <h4 class="mt-4 mb-4">Projects</h4>
+
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <div class="card">
+                    <img class="card-img-top"
+                        src="https://instructure-uploads-apse2.s3.ap-southeast-2.amazonaws.com/account_95950000000000001/attachments/980142/building-IT.jpg?response-content-disposition=attachment%3B%20filename%3D%22building-IT.jpg%22%3B%20filename%2A%3DUTF-8%27%27building%252DIT.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIZ3OCIWEYQRKC54Q%2F20191030%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20191030T224628Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=5472987a534792987762c828448142b6519ddb7d28599494b4710a2e1061d564"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Building IT System</h4>
+                        <h6 class="text-muted card-subtitle mb-2">COSC2634</h6>
+                        <a class="card-link" href="#">People</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-3">
+                <div class="card">
+                    <img class="card-img-top"
+                        src="https://instructure-uploads-apse2.s3.ap-southeast-2.amazonaws.com/account_95950000000000001/attachments/980142/building-IT.jpg?response-content-disposition=attachment%3B%20filename%3D%22building-IT.jpg%22%3B%20filename%2A%3DUTF-8%27%27building%252DIT.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIZ3OCIWEYQRKC54Q%2F20191030%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20191030T224628Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=5472987a534792987762c828448142b6519ddb7d28599494b4710a2e1061d564"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Building IT System</h4>
+                        <h6 class="text-muted card-subtitle mb-2">COSC2634</h6>
+                        <a class="card-link" href="#">People</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-3">
+                <div class="card">
+                    <img class="card-img-top"
+                        src="https://instructure-uploads-apse2.s3.ap-southeast-2.amazonaws.com/account_95950000000000001/attachments/980142/building-IT.jpg?response-content-disposition=attachment%3B%20filename%3D%22building-IT.jpg%22%3B%20filename%2A%3DUTF-8%27%27building%252DIT.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIZ3OCIWEYQRKC54Q%2F20191030%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20191030T224628Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=5472987a534792987762c828448142b6519ddb7d28599494b4710a2e1061d564"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Building IT System</h4>
+                        <h6 class="text-muted card-subtitle mb-2">COSC2634</h6>
+                        <a class="card-link" href="#">People</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-3">
+                <div class="card">
+                    <img class="card-img-top"
+                        src="https://instructure-uploads-apse2.s3.ap-southeast-2.amazonaws.com/account_95950000000000001/attachments/980142/building-IT.jpg?response-content-disposition=attachment%3B%20filename%3D%22building-IT.jpg%22%3B%20filename%2A%3DUTF-8%27%27building%252DIT.jpg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIZ3OCIWEYQRKC54Q%2F20191030%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20191030T224628Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=5472987a534792987762c828448142b6519ddb7d28599494b4710a2e1061d564"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Building IT System</h4>
+                        <h6 class="text-muted card-subtitle mb-2">COSC2634</h6>
+                        <a class="card-link" href="#">People</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="/javascripts/profile.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
