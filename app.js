@@ -16,10 +16,7 @@ const courseRoutes = require("./routes/course");
 const projectRoutes = require("./routes/project");
 const profileRoutes = require("./routes/profile");
 
-mongoose.connect("mongodb://localhost/profile_feature", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+mongoose.connect('mongodb://db:27017/profile_feature', { useNewUrlParser: true, useUnifiedTopology: true });
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.set("view engine", "ejs");
